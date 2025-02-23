@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于Agent的Python助教机器人</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        #chat-box {
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .model-message {
+            background: #e9ecef;
+            color: #333;
+            align-self: flex-start;
+        }
+
+        #input-box {
+            width: calc(100% - 22px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            resize: vertical; 
+            min-height: 60px; 
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            #chat-box {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python助教交互界面</h1>
+        <div id="chat-box"></div>
+        <textarea id="input-box" placeholder="请输入你的问题..." onkeydown="handleKeyPress(event)"></textarea>
+        <button onclick="sendMessage()">发送</button>
+    </div>
+
+    <script>
+        let conversationHistory = [];
+
+        async function sendMessage() {
+            const inputBox = document.getElementById("input-box");
+            const chatBox = document.getElementById("chat-box");
+
+            const userMessage = inputBox.value.trim();
+            if (!userMessage) return;
+
+            // 显示用户输入
+            const userMessageElement = document.createElement("div");
+            userMessageElement.className = "message user-message";
+            userMessageElement.innerHTML = `<strong>你:</strong><pre>${userMessage}</pre>`;
+            chatBox.appendChild(userMessageElement);
+
+            // 清空输入框
+            inputBox.value = "";
+
+            try {
+                const response = await fetch("/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ query: userMessage }),
+                });
+
+                const data = await response.json();
+
+                // 显示模型回答
+                const modelMessageElement = document.createElement("div");
+                modelMessageElement.className = "message model-message";
+
+                const formattedResponse = data.response.replace(/\n/g, "<br>");
+                modelMessageElement.innerHTML = `<strong>助教:</strong> <pre>${formattedResponse}</pre>`;
+                chatBox.appendChild(modelMessageElement);
+            } catch (error) {
+                console.error("请求失败:", error);
+                const errorMessageElement = document.createElement("div");
+                errorMessageElement.className = "message model-message";
+                errorMessageElement.innerHTML = `<strong>助教:</strong> 请求失败，请稍后重试。`;
+                chatBox.appendChild(errorMessageElement);
+            }
+
+            // 滚动到底部
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        // 处理回车键（Shift + Enter 换行，Enter 发送）
+        function handleKeyPress(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault(); // 阻止默认换行行为
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>
