@@ -17,7 +17,16 @@
 
 ### 功能列表
 1. **代码检查**：检查 Python 代码的语法错误并提供修复建议。
-2. **报错解释**：用中文解释 Python 报错信息，并提供修复建议。
-3. **Python 知识点问答**：基于知识库检索，回答 Python 相关问题。
-4. **数学计算**：支持简单的数学表达式计算。
-5. **多轮对话**：支持上下文感知的多轮对话。
+   ![代码检查功能](images/test_check_code.png)
+   ![代码检查功能agent调用](images/agent_function_call_check_code.png)
+3. **报错解释**：用中文解释 Python 报错信息，并提供修复建议。
+   ![报错解释功能](images/test_explain_error.png)
+   ![报错解释功能agent调用](images/agent_function_call_explain_error.png)
+5. **Python 知识点问答**：基于知识库检索，回答 Python 相关问题。
+   ![知识点问答功能](images/test_ask_python_knowledge.png)
+   ![知识点问答功能agent调用](images/agent_function_call_ask_python_knowledge.png)
+7. **数学计算**：支持简单的数学表达式计算。
+   ![数学计算功能](images/test_calculate.png)
+   ![数学计算功能agent调用](images/agent_function_call_calculate.png)
+
+
