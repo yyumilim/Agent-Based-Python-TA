@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     
     # 创建向量数据库存储
-    embedding_model = "/home/yumi/model/bge-large-zh-v1.5"
+    embedding_model = "BAAI/bge-large-zh-v1.5"
     persist_directory = "chromadb"
     db = create_vector_store(split_docs, embedding_model, persist_directory)
     
