@@ -24,9 +24,9 @@
    ![报错解释功能agent调用](基于Agent的Python助教机器人/images/agent_function_call_explain_error.png)
 5. **Python 知识点问答**：基于知识库检索，回答 Python 相关问题。
    ![知识点问答功能](基于Agent的Python助教机器人/images/test_ask_python_knowledge.png)
-   ![知识点问答功能agent调用](基于Agent的Python助教机器人images/agent_function_call_ask_python_knowledge.png)
+   ![知识点问答功能agent调用](基于Agent的Python助教机器人/images/agent_function_call_ask_python_knowledge.png)
 7. **数学计算**：支持简单的数学表达式计算。
-   ![数学计算功能](基于Agent的Python助教机器人images/test_calculate.png)
+   ![数学计算功能](基于Agent的Python助教机器人/images/test_calculate.png)
    ![数学计算功能agent调用](基于Agent的Python助教机器人/images/agent_function_call_calculate.png)
 
 
