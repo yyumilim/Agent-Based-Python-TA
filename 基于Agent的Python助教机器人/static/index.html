@@ -146,7 +146,7 @@
                 modelMessageElement.className = "message model-message";
 
                 const formattedResponse = data.response.replace(/\n/g, "<br>");
-                modelMessageElement.innerHTML = `<strong>助教:</strong> <pre>${formattedResponse}</pre>`;
+                modelMessageElement.innerHTML = `<strong>助教:</strong> ${formattedResponse}`;
                 chatBox.appendChild(modelMessageElement);
             } catch (error) {
                 console.error("请求失败:", error);
