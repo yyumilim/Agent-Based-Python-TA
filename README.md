@@ -18,6 +18,11 @@
 - **后端框架**：FastAPI
 - **前端**：HTML + JavaScript
 
+## 关键文件说明
+
+- **`main.py`**：FastAPI 主程序，包含 Agent 和 Tools 的实现。
+- **`build_knowledge_base.py`**：用于构建知识库的脚本，将文档加载并转换为向量数据库。
+
 ## 快速开始
 
 ### 1. 安装依赖
@@ -46,10 +51,6 @@ python build_knowledge_base.py
 python main.py
 ```
 服务启动后，打开浏览器访问 `http://127.0.0.1:8000`，即可使用 Python 助教机器人。
-
-### **关键文件说明**
-- **`main.py`**：FastAPI 主程序，包含 Agent 和 Tools 的实现。
-- **`build_knowledge_base.py`**：用于构建知识库的脚本，将文档加载并转换为向量数据库。
 
 
 ## 功能列表
