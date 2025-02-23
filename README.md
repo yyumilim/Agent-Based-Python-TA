@@ -1,4 +1,4 @@
-# Agent-Based-Python-TA   基于Agent的Python助教机器人
+# Agent-Based-Python-TA：基于Agent的Python助教机器人
 
 一个基于 LangChain Agent 和 OpenAI GPT-3.5 的 Python 助教机器人，支持代码检查、报错解释、Python 知识点问答和数学计算功能。
 ![打招呼示例](基于Agent的Python助教机器人/images/打招呼.png)
@@ -15,7 +15,6 @@
 - **知识库检索**：LangChain RAG + Chroma
 - **后端框架**：FastAPI
 - **前端**：HTML + JavaScript
-
 
 ## 快速开始
 
@@ -37,9 +36,9 @@ OPENAI_BASE_URL="your_openai_base_url"
 ```bash
 python build_knowledge_base.py
 ```
-加载知识库文档（ `chromadb/Python_concept.docx`），将其转换为向量数据库。（这只是简单的知识文档，可以替换大家自己需要的知识文档）
+这会加载知识库文档（chromadb/Python_concept.docx），并将其转换为向量数据库。（你可以替换为自己的知识文档）
 
-### 5. 启动服务
+### 4. 启动服务
 运行以下命令启动 FastAPI 服务：
 ```bash
 python main.py
@@ -51,7 +50,7 @@ python main.py
 - **`build_knowledge_base.py`**：用于构建知识库的脚本，将文档加载并转换为向量数据库。
 
 
-### 功能列表
+## 功能列表
 1. **代码检查**：检查 Python 代码的语法错误并提供修复建议。  
    <div style="text-align: left;">
      <img src="基于Agent的Python助教机器人/images/test_check_code.png" alt="代码检查功能" style="width:50%;" />  
