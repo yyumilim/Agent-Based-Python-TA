@@ -27,7 +27,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 chat_model = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
 
-embedding_model = "/home/yumi/model/bge-large-zh-v1.5"
+embedding_model = "BAAI/bge-large-zh-v1.5"
 persist_directory = "chromadb"
 embeddings = HuggingFaceBgeEmbeddings(model_name=embedding_model)
 db = Chroma(persist_directory=persist_directory, embedding_function=embeddings)
