@@ -17,19 +17,19 @@
 
 ### 功能列表
 1. **代码检查**：检查 Python 代码的语法错误并提供修复建议。
-   <img src="images/test_check_code.png" alt="代码检查功能" style="width:50%;" />
-   <img src="images/agent_function_call_check_code.png" alt="代码检查功能 Agent 调用" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/test_check_code.png" alt="代码检查功能" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/agent_function_call_check_code.png" alt="代码检查功能 Agent 调用" style="width:50%;" />
 
 2. **报错解释**：用中文解释 Python 报错信息，并提供修复建议。
-   <img src="images/test_explain_error.png" alt="报错解释功能" style="width:50%;" />
-   <img src="images/agent_function_call_explain_error.png" alt="报错解释功能 Agent 调用" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/test_explain_error.png" alt="报错解释功能" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/agent_function_call_explain_error.png" alt="报错解释功能 Agent 调用" style="width:50%;" />
 
 3. **Python 知识点问答**：基于知识库检索，回答 Python 相关问题。
-   <img src="images/test_ask_python_knowledge.png" alt="知识点问答功能" style="width:50%;" />
-   <img src="images/agent_function_call_ask_python_knowledge.png" alt="知识点问答功能 Agent 调用" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/test_ask_python_knowledge.png" alt="知识点问答功能" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/agent_function_call_ask_python_knowledge.png" alt="知识点问答功能 Agent 调用" style="width:50%;" />
 
 4. **数学计算**：支持简单的数学表达式计算。
-   <img src="images/test_calculate.png" alt="数学计算功能" style="width:50%;" />
-   <img src="images/agent_function_call_calculate.png" alt="数学计算功能 Agent 调用" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/test_calculate.png" alt="数学计算功能" style="width:50%;" />
+   <img src="基于Agent的Python助教机器人/images/agent_function_call_calculate.png" alt="数学计算功能 Agent 调用" style="width:50%;" />
 
 
