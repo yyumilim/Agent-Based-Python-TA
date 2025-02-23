@@ -17,7 +17,7 @@
 
 ### 功能列表
 1. **代码检查**：检查 Python 代码的语法错误并提供修复建议。
-   ![代码检查功能](基于Agent的Python助教机器人/images/test_check_code.png){:width="50%"}
+   ![代码检查功能](基于Agent的Python助教机器人/images/test_check_code.png){:width="10%"}
    ![代码检查功能agent调用](基于Agent的Python助教机器人/images/agent_function_call_check_code.png)
 3. **报错解释**：用中文解释 Python 报错信息，并提供修复建议。
    ![报错解释功能](基于Agent的Python助教机器人/images/test_explain_error.png)
