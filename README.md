@@ -1,7 +1,7 @@
 # Agent-Based-Python-TA   基于Agent的Python助教机器人
 
 一个基于 LangChain Agent 和 OpenAI GPT-3.5 的 Python 助教机器人，支持代码检查、报错解释、Python 知识点问答和数学计算功能。
-![打招呼示例](基于Agent的Python助教机器人/images/打招呼)
+![打招呼示例](基于Agent的Python助教机器人/images/打招呼.png)
 
 ### 项目特点
 - **Agent 调用 Tools**：通过 LangChain Agent 动态调用自定义 Tools，实现多任务处理。
