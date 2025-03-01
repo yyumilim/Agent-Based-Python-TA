@@ -6,6 +6,7 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import initialize_agent, AgentType, tool
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_community.vectorstores import Chroma
+from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain_core.prompts import ChatPromptTemplate
@@ -112,7 +113,7 @@ agent = initialize_agent(
     verbose=True,
 )
 
-conversation_history = []
+conversation_history = ChatMessageHistory()
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root():
@@ -127,7 +128,7 @@ async def chat(request: Request):
     try:
         logger.info("开始调用 Agent 处理用户输入...")
 
-        context = "\n".join(conversation_history)
+        context = "\n".join([msg.content for msg in conversation_history.messages])
         print(f"对话历史：\n{context}\n当前问题：{query}")
 
         SYSTEM_PROMPT = """
@@ -139,8 +140,8 @@ async def chat(request: Request):
         """
         response = agent.run(SYSTEM_PROMPT.format(context=context, query=query))
    
-        conversation_history.append(f"用户: {query}")
-        conversation_history.append(f"小林: {response}")
+        conversation_history.add_user_message(query) 
+        conversation_history.add_ai_message(response) 
 
         logger.info(f"Agent 返回结果: {response}")
         return {
