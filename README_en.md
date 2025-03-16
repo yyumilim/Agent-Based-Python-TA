@@ -51,3 +51,29 @@ Run the following command to start the FastAPI service:
 python main.py
 ```
 After the service starts, open your browser and visit `http://127.0.0.1:8000` to use the Python teaching assistant robot.
+
+## Feature List
+
+1. **Code Review**: Check Python code for syntax errors and provide fixes.  
+   <div style="text-align: left;">
+     <img src="基于Agent的Python助教机器人/images/test_check_code.png" alt="Code Review Feature" style="width:50%;" />  
+     <img src="基于Agent的Python助教机器人/images/agent_function_call_check_code.png" alt="Code Review Feature Agent Call" style="width:50%;" />
+   </div>
+
+2. **Error Explanation**: Explain Python error messages in Chinese and provide fixes.  
+   <div style="text-align: left;">
+     <img src="基于Agent的Python助教机器人/images/test_explain_error.png" alt="Error Explanation Feature" style="width:50%;" />  
+     <img src="基于Agent的Python助教机器人/images/agent_function_call_explain_error.png" alt="Error Explanation Feature Agent Call" style="width:50%;" />
+   </div>
+
+3. **Python Knowledge Q&A**: Answer Python-related questions based on knowledge base retrieval.  
+   <div style="text-align: left;">
+     <img src="基于Agent的Python助教机器人/images/test_ask_python_knowledge.png" alt="Knowledge Q&A Feature" style="width:50%;" />  
+     <img src="基于Agent的Python助教机器人/images/agent_function_call_ask_python_knowledge.png" alt="Knowledge Q&A Feature Agent Call" style="width:50%;" />
+   </div>
+
+4. **Mathematical Calculations**: Supports simple mathematical expression calculations.  
+   <div style="text-align: left;">
+     <img src="基于Agent的Python助教机器人/images/test_calculate.png" alt="Math Calculation Feature" style="width:50%;" />  
+     <img src="基于Agent的Python助教机器人/images/agent_function_call_calculate.png" alt="Math Calculation Feature Agent Call" style="width:50%;" />
+   </div>
